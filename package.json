@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel .src/index.html"
   },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
   "keywords": [],
   "author": "Rachel C.",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.12.3"
+  },
+  "devDependencies": {}
 }
