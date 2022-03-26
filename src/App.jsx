@@ -10,8 +10,7 @@ const App = (props) => {
   const [userInput, setUserInput] = useState('');
   const [gifResults, setGifResults] = useState([]);
   const [error, setError] = useState(false);
-  // const { data: gifs } = await giphy.search('dogs', { sort: 'relevant', lang: 'es', limit: 10, type: 'stickers' })
-  console.log('key ',process.env.API_KEY)
+  // console.log('key ',process.env.API_KEY)
   useEffect(() => {
     const fetchGifs = async () => {
        const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=cheeseburgers`,{
@@ -20,9 +19,21 @@ const App = (props) => {
         }
       })
       console.log('gif data ', results)
+      setGifResults(results.data.data)
     }
     fetchGifs()
-  });
+  },[]);
+
+  const render = () => {
+    return gifResults.map(gif => {
+      return (
+        <div className="gifContainer">
+          <img src={gif.images.fixed_height.url} />
+          </div>
+      )
+    })
+  }
+
   const handleInput = (e) => {
     setUserInput(e => e.target.value)
   }
@@ -32,11 +43,6 @@ const App = (props) => {
       setError(true);
       return;
     }
-    // const apiCall = async () => {
-    //   const res = await giphy.animate(userInput, {limit: 20})
-    //   console.log(res)
-    //   setGifResults(res.data);
-    // }
 
   apiCall();
   setUserInput('');
@@ -50,6 +56,7 @@ const App = (props) => {
           <button>Search</button>
           <GifContainer 
           handleSubmit={handleSubmit}/>
+          <div className="gifContainer">{render()}</div>
       </div>
 
     )
