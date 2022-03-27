@@ -16,7 +16,7 @@ const App = (props) => {
     )
   }
  
-  const fetchEffect = () => {
+  const fetchEffect = (props) => {
     if(!userInput){
         setUserInput(`roses`);
         handleSubmit()
@@ -72,12 +72,14 @@ const App = (props) => {
     return (
       <div className="main">
           <h1>Enter Your Gif Search Term</h1>
-          <div>
-          <input type="text" className="gifInput" value={userInput} onChange={handleInput}/>
-          </div>
-          <div className="gifContainer">
-            {gifResults[0] === `Not enough data` ? notEnoughResults() : render()}
-          </div>
+         <GifContainer 
+         userInput={props.userInput}
+         handleInput={handleInput}
+         gifResults={gifResults}
+         notEnoughResults={notEnoughResults}
+         render={render}
+         
+         />
       </div>
 
     )
