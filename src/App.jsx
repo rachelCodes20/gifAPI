@@ -1,6 +1,5 @@
 const dotenv = require('dotenv');
 import React, { useState, useEffect } from 'react';
-// import SearchBar from './SearchBar';
 import GifContainer  from './GifContainer';
 import { GiphyFetch } from '@giphy/js-fetch-api';
 const axios = require('axios');
@@ -10,19 +9,24 @@ const App = (props) => {
   const [userInput, setUserInput] = useState('');
   const [gifResults, setGifResults] = useState([]);
   const [error, setError] = useState(false);
-  // console.log('key ',process.env.API_KEY)
-  useEffect(() => {
+  const fetchEffect = () => {
+    if(!userInput){
+        setUserInput(`roses`);
+        handleSubmit()
+      }
     const fetchGifs = async () => {
-       const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=cheeseburgers`,{
-        params: {
-          api_key:process.env.API_KEY
-        }
-      })
-      console.log('gif data ', results)
-      setGifResults(results.data.data)
-    }
-    fetchGifs()
-  },[]);
+      const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,{
+       params: {
+         api_key:process.env.API_KEY
+       }
+     })
+     setGifResults(results.data.data)
+   }
+   fetchGifs()
+ }
+    useEffect(() => {
+      fetchEffect()
+  },[])
 
   const render = () => {
     return gifResults.map(gif => {
@@ -33,29 +37,31 @@ const App = (props) => {
       )
     })
   }
-
+  
   const handleInput = (e) => {
-    setUserInput(e => e.target.value)
+    // console.log('e', e.target.value)
+    setUserInput(e.target.value)
+    if(userInput){
+        fetchEffect()
+    }
   }
   const handleSubmit = () => {
     if(userInput.length === 0){
-      console.log(`please insert text`);
+      // alert(`please insert text`);
       setError(true);
-      return;
-    }
-
-  apiCall();
-  setUserInput('');
+    }else{
+      // console.log('line 46', userInput)
+      fetchEffect()
   setError(false);
+    }
+ setUserInput('');
   }
-
     return (
-      <div>
+      <div className="main">
           <h1>Enter Your Gif Search Term</h1>
-          <input type="text" value={userInput} onChange={handleInput}/>
-          <button>Search</button>
-          <GifContainer 
-          handleSubmit={handleSubmit}/>
+          <div>
+          <input type="text" className="gifInput" value={userInput} onChange={handleInput}/>
+          </div>
           <div className="gifContainer">{render()}</div>
       </div>
 

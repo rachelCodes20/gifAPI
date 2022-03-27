@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+}
+body{
+    background-color: green;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input{
+    border: none;
+    text-align: center;
+    margin: 20px;
+    height: 40px;
+    width: 80%;
+    font-size: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.gifInput{
+    text-align: center;
+    color: black
+}
