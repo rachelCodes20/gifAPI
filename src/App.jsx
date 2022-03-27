@@ -9,6 +9,13 @@ const App = (props) => {
   const [userInput, setUserInput] = useState('');
   const [gifResults, setGifResults] = useState([]);
   const [error, setError] = useState(false);
+  
+  const notEnoughResults = () => {
+    return (
+      <h1>Your search has too few results = ( </h1>
+    )
+  }
+ 
   const fetchEffect = () => {
     if(!userInput){
         setUserInput(`roses`);
@@ -17,10 +24,16 @@ const App = (props) => {
     const fetchGifs = async () => {
       const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,{
        params: {
-         api_key:process.env.API_KEY
+         api_key:process.env.API_KEY,
+         limit: 3
        }
      })
-     setGifResults(results.data.data)
+     if(results.data.data.length > 2){
+      setGifResults([`Not enough data`])
+      notEnoughResults();
+     }else{
+         setGifResults(results.data.data)
+     }
    }
    fetchGifs()
  }
@@ -62,7 +75,9 @@ const App = (props) => {
           <div>
           <input type="text" className="gifInput" value={userInput} onChange={handleInput}/>
           </div>
-          <div className="gifContainer">{render()}</div>
+          <div className="gifContainer">
+            {gifResults[0] === `Not enough data` ? notEnoughResults() : render()}
+          </div>
       </div>
 
     )
