@@ -28,7 +28,7 @@ const App = (props) => {
          limit: 3
        }
      })
-     if(results.data.data.length > 2){
+     if(results.data.data.length < 3){
       setGifResults([`Not enough data`])
       notEnoughResults();
      }else{
