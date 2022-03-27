@@ -8,15 +8,23 @@ body{
 input{
     border: none;
     text-align: center;
-    margin: 20px;
     height: 40px;
     width: 80%;
     font-size: 20px;
     margin-left: 20%;
     margin-right: 20%;
+    border-radius: 5px;
 }
 
 .gifInput{
     text-align: center;
     color: black
+}
+
+.gifContainer{
+    text-align: center;
+    border: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin: 5px;
 }
