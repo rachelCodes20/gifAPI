@@ -2,18 +2,25 @@ h1{
     text-align: center;
 }
 body{
-    background-color: green;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:blueviolet;
+    font-family: monospace;
+    color: white
 }
+
+.main{
+    text-align: center;
+}
+
 input{
     border: none;
-    text-align: center;
-    height: 40px;
-    width: 80%;
+    height: 50px;
+    display: inline-block;
+    width:800px;
     font-size: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-radius: 5px;
+    font-weight: bold;
+    margin: auto;
+    border-radius: 5px; 
+    font-family: monospace;
 }
 
 .gifInput{
@@ -23,8 +30,5 @@ input{
 
 .gifContainer{
     text-align: center;
-    border: 1px solid black;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin: 5px;
+    padding-top: 5px;
 }

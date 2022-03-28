@@ -4,9 +4,10 @@ const mystyle = {
     color: "white",
     backgroundColor: "gold",
     padding: "10px",
-    marginTop:"10px",
+    margin:"50px",
     fontFamily: "Arial",
-    width: "50%"
+    justifyContent: "center",
+    borderRadius: "10px",
   };
 
 

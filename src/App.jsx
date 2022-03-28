@@ -1,15 +1,12 @@
 const dotenv = require('dotenv');
 import React, { useState, useEffect } from 'react';
 import GifContainer  from './GifContainer';
-import { GiphyFetch } from '@giphy/js-fetch-api';
 const axios = require('axios');
-const giphy = new GiphyFetch(process.env.API_KEY);
 
 const App = (props) => {
   const [userInput, setUserInput] = useState('');
-  const [gifResults, setGifResults] = useState([]);
-  const [error, setError] = useState(false);
-  
+  const [gifResults, setGifResults] = useState([]); 
+  const [error, setError] = useState(false)
   const notEnoughResults = () => {
     return (
       <h1>Your search has too few results = ( </h1>
@@ -52,7 +49,6 @@ const App = (props) => {
   }
   
   const handleInput = (e) => {
-    // console.log('e', e.target.value)
     setUserInput(e.target.value)
     if(userInput){
         fetchEffect()
@@ -63,25 +59,22 @@ const App = (props) => {
       // alert(`please insert text`);
       setError(true);
     }else{
-      // console.log('line 46', userInput)
       fetchEffect()
-  setError(false);
+      setError(false);
     }
- setUserInput('');
+    setUserInput('');
   }
     return (
       <div className="main">
-          <h1>Enter Your Gif Search Term</h1>
+         <h1>Enter Your Gif Search Term</h1>
          <GifContainer 
          userInput={props.userInput}
          handleInput={handleInput}
          gifResults={gifResults}
          notEnoughResults={notEnoughResults}
          render={render}
-         
          />
       </div>
-
     )
   }
   export default App;
