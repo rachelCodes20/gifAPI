@@ -14,10 +14,6 @@ const App = (props) => {
   }
  
   const fetchEffect = (props) => {
-    if(!userInput){
-        setUserInput(`roses`);
-        handleSubmit()
-      }
     const fetchGifs = async () => {
       const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,{
        params: {
@@ -32,10 +28,10 @@ const App = (props) => {
          setGifResults(results.data.data)
      }
    }
-   fetchGifs()
+   fetchGifs();
  }
     useEffect(() => {
-      fetchEffect()
+      fetchEffect();
   },[])
 
   const render = () => {
@@ -43,15 +39,15 @@ const App = (props) => {
       return (
         <div className="gifContainer">
           <img src={gif.images.fixed_height.url} />
-          </div>
+        </div>
       )
     })
   }
   
   const handleInput = (e) => {
-    setUserInput(e.target.value)
+    setUserInput(e.target.value);
     if(userInput){
-        fetchEffect()
+        fetchEffect();
     }
   }
   const handleSubmit = () => {
@@ -59,16 +55,16 @@ const App = (props) => {
       // alert(`please insert text`);
       setError(true);
     }else{
-      fetchEffect()
+      fetchEffect();
       setError(false);
     }
     setUserInput('');
   }
     return (
       <div className="main">
-         <h1>Enter Your Gif Search Term</h1>
+         <h1>Let's Get Some Gifs!</h1>
          <GifContainer 
-         userInput={props.userInput}
+         userInput={userInput}
          handleInput={handleInput}
          gifResults={gifResults}
          notEnoughResults={notEnoughResults}

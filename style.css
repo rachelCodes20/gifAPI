@@ -21,6 +21,7 @@ input{
     margin: auto;
     border-radius: 5px; 
     font-family: monospace;
+    outline: none;
 }
 
 .gifInput{
@@ -28,7 +29,15 @@ input{
     color: black
 }
 
-.gifContainer{
+.gifsContainer{
     text-align: center;
-    padding-top: 5px;
+    padding: 50px;
+    color: white;
+    width: 100%;
+    margin: 20px;
+    background-color: gold;
+    padding: 10px;
+    font-family: Arial;
+    justify-content: center;
+    border-radius: 10px;
 }
