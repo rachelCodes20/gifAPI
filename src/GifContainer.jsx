@@ -8,7 +8,7 @@ import React from 'react';
     const notEnoughResults = props.notEnoughResults;
     const render = props.render;
     return (
-        <div >
+        <div gi>
            <div>
           <input type="text" className="gifInput" value={userInput} onChange={handleInput}/>
           </div>
