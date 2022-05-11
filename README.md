@@ -1,9 +1,11 @@
 # GIPHY Search API
 
-For this challenge, the developer is tasked with making a Search API call with a user-defined parameter to create a Giph-generator.
+### For this challenge, the developer is tasked with... 
 
-Modularize the app with separate components when possible.
+* Making a Search API call with a user-defined parameter to create a Giph-generator.
 
-The search should have the following limitations: returns no more than 3 gifs
+* Modularizing the app with separate components when possible.
 
-The frontend of this application should be coded entirely in React, use functional components + hooks. 
+* Implementing a search that returns no more than 3 results.
+
+* Building out the frontend of the application entirely in React, using functional components + hooks. 
