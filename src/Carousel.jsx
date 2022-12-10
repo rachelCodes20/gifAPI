@@ -1,12 +1,31 @@
 import happyBalloons from './Assets/madison-oren-uGP_6CAD-14-unsplash.jpg';
 import doggieBday from './Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg';
 import confettiGirl from './Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg';
+function handleClick () {
+    const buttons = document.querySelectorAll('[data-carousel-button]');
+    buttons.forEach( button => {
+        button.addEventListener('click', () => {
+            // button.dataset.carouselButton === 'next' ? 1 : -1;
+            // const slides = button
+            // .closest('[data-carousel/hugo-ruiz-e2pVrE1PYzs-unsplash.6bb25e5b.jpg]')
+            // .querySelector('[data-slides]');
+        
+            // const activeSlide = slides.querySelector('[data-activeSlide]');
+            // let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+            // if(newIndex < 0) newIndex = slides.children.length - 1;
+            // if(newIndex >= slides.children.length) newIndex = 0;
+            // slides.children[newIndex] = dataset.active = true;
+            // delete activeSlide.dataset.active
+            console.log('clicked')
+        })
+    }) 
+}
 
-const Carousel = () => (
+const Carousel = () => ( 
     <section aria-label="New Photos">
         {/* closest parent el that is a carousel and then enter slide container */}
         <div className="carousel" data-carousel>
-            <button className="carousel-button prev" data-carousel-button="prev">&#8249;</button>
+            <button className="carousel-button prev" data-carousel-button="prev" onClick={handleClick}>&#8249;</button>
             <button className="carousel-button next" data-carousel-button="next">&#8250;</button>
            <h1>Happiness Carousel</h1>
            
