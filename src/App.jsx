@@ -10,11 +10,11 @@ const App = (props) => {
   const [error, setError] = useState(false);
   const notEnoughResults = () => {
     return (
-      <h1>Your search has too few results = ( </h1>
+      <h1>Your search has too few results </h1>
     )
   }
  
-  const fetchEffect = (props) => {
+  const fetchEffect = props => {
     const fetchGifs = async () => {
       const results = await axios(`https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,{
        params: {
