@@ -1,4 +1,6 @@
-*, :before, :after {
+*,
+:before,
+:after {
   box-sizing: border-box;
 }
 
@@ -84,8 +86,8 @@ input {
   color: #c40d0dd0;
   background-color: #0000001a;
   border: none;
-  border-radius: 0 .25rem;
-  padding: 0 .5rem;
+  border-radius: 0 0.25rem;
+  padding: 0 0.5rem;
   font-size: 7rem;
   position: absolute;
   top: 50%;
