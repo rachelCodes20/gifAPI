@@ -1,4 +1,3 @@
-
 h1 {
   text-align: center;
 }
@@ -48,7 +47,7 @@ input {
 
 .sliderStyles {
   height: 100%;
-  position: "relative"
+  position: "relative";
 }
 
 .sliderContainer {
@@ -63,8 +62,8 @@ input {
   left: 32px;
   font-size: 45px;
   color: "#fff";
-  z-Index: 1;
-  cursor: "pointer"
+  z-index: 1;
+  cursor: "pointer";
 }
 
 .rightArrowStyle {
@@ -74,6 +73,6 @@ input {
   right: 32px;
   font-size: 45px;
   color: "#fff";
-  z-Index: 1;
-  cursor: "pointer"
+  z-index: 1;
+  cursor: "pointer";
 }

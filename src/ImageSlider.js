@@ -1,11 +1,13 @@
 import { useState } from "react";
 const ImageSlider = ({ slides }) => {
-const [currentIndex, setCurrentIndex] = useState(0);
-return <div> 
-    <div style={{backgroundImage: `url(${slides[currentIndex].url})`}}> 
-
+  const [currentIndex, setCurrentIndex] = useState(0);
+  return (
+    <div>
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+      ></div>
     </div>
-</div>
-}
+  );
+};
 
 export default ImageSlider;
