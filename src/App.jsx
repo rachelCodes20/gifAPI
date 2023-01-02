@@ -3,11 +3,22 @@ import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
 import Carousel from "./Carousel";
 const axios = require("axios");
+import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
+import doggieBday from "./Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg";
+import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
+
+function handleClick() {
+}
 
 const App = (props) => {
   const [userInput, setUserInput] = useState("");
   const [gifResults, setGifResults] = useState([]);
   const [error, setError] = useState(false);
+  const slides = [
+      {url: happyBalloons, title: "Happy Ballons"},
+      {url: doggieBday, title: "Doggy Birthday"},
+      {url: confettiGirl, title: "Confetti Girl"}
+     ]
   const notEnoughResults = () => {
     return <h1>Your search has too few results </h1>;
   };
@@ -73,7 +84,7 @@ const App = (props) => {
         notEnoughResults={notEnoughResults}
         render={render}
       />
-      <Carousel />
+      <Carousel slides={slides} />
     </div>
   );
 };
