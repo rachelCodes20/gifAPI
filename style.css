@@ -1,16 +1,12 @@
 h1 {
   text-align: center;
 }
+
 body {
-  background-color: blueviolet;
+  background-color: rgb(73, 30, 81);
   font-family: monospace;
   color: white;
   margin: 0;
-}
-
-.gifInput {
-  display: flex;
-  width: 50%;
 }
 
 input {
@@ -27,8 +23,11 @@ input {
 }
 
 .gifInput {
+  display: flex;
+  width: 50%;
   text-align: center;
   color: black;
+  border: thick double #32a1ce;
 }
 
 .gifsContainer {
@@ -42,6 +41,11 @@ input {
   font-family: Arial;
   justify-content: center;
   border-radius: 10px;
+}
+
+.carousel-style {
+  border: thick solid #32a1ce;
+  background-color: #32a1ce;
 }
 
 .sliderStyles {
@@ -58,20 +62,28 @@ input {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  left: 32px;
-  font-size: 45px;
+  left: 70px;
+  font-size: 65px;
+  font-weight: bold;
   color: "#fff";
   z-index: 1;
   cursor: "pointer";
+  background-color: #32a1ce;
+  border-radius: 100px;
+  padding:5px;
 }
 
 .rightArrowStyle {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  right: 32px;
-  font-size: 45px;
+  right: 70px;
+  font-size: 65px;
+  font-weight: bold;
   color: "#fff";
   z-index: 1;
   cursor: "pointer";
+  background-color: #32a1ce;
+  border-radius: 100px;
+  padding:5px;
 }
