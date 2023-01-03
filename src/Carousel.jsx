@@ -23,10 +23,6 @@ function toNext() {
     backgroundImage: `url(${slides[currentIndex].url})`,
   };
 
-  // const sliderContainer = {
-  //   height: "100%",
-  // };
-
   return (
     <div>
       <h1>Happiness Carousel</h1>
