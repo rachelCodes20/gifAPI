@@ -1,9 +1,19 @@
-import ImageSlider from "./ImageSlider";
 import { useState } from "react";
-function handleClick() {}
 
 function Carousel({ slides }) {
-  const [currentIndex, setCurrentUser] = useState(0);
+  const [currentIndex, setIndex] = useState(0);
+
+  function toPrev() {
+  const firstSlide = currentIndex === 0;
+  const newIndex = firstSlide ? slides.length - 1 : currentIndex - 1;
+  setIndex(newIndex);
+}
+
+function toNext() {
+  const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+  setIndex(newIndex);
+}
+
   const imageStyle = {
     width: "100%",
     height: "500px",
@@ -13,15 +23,15 @@ function Carousel({ slides }) {
     backgroundImage: `url(${slides[currentIndex].url})`,
   };
 
-  const sliderContainer = {
-    height: "100%",
-  };
+  // const sliderContainer = {
+  //   height: "100%",
+  // };
 
   return (
     <div>
       <h1>Happiness Carousel</h1>
-      <div className="leftArrowStyle">{`<`}</div>
-      <div className="rightArrowStyle">{`>`}</div>
+      <div className="leftArrowStyle" onClick={toPrev}>{`<`}</div>
+      <div className="rightArrowStyle" onClick={toNext}>{`>`}</div>
       <div style={imageStyle}></div>
     </div>
   );
