@@ -2,7 +2,7 @@
 
 ## This project is a :tada: fun :tada: example of what you can produce with the GIPHY SDK. 
 
-I built a gif that generates only a limited number of results, populating those in real time, as the user types into the input box. I accomplished this by editing the limit parameter in the endpoint.
+I built a GIF search engine that generates only a limited number of results, populating those in real time, as the user types into the input box. I accomplished this by editing the limit parameter in the endpoint.
 
 ## GIFs Galore!
 
