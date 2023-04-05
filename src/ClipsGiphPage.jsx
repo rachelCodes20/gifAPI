@@ -9,7 +9,7 @@ import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
 
 function handleClick() {}
 
-const App = (props) => {
+const ClipsGiphPage = (props) => {
   const [userInput, setUserInput] = useState("");
   const [gifResults, setGifResults] = useState([]);
   const [error, setError] = useState(false);
@@ -87,4 +87,4 @@ const App = (props) => {
     </div>
   );
 };
-export default App;
+export default ClipsGiphPage;
