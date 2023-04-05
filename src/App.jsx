@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
+import NavBar from "./NavBar";
 import Carousel from "./Carousel";
 const axios = require("axios");
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
@@ -75,6 +76,7 @@ const App = (props) => {
   };
   return (
     <div>
+      <NavBar />
       <h1>Let's Get Some Gifs!</h1>
       <GifContainer
         userInput={userInput}
