@@ -1,9 +1,10 @@
 const dotenv = require("dotenv");
 import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
-import NavBar from "./NavBar";
+import Layout from "../Layout.js";
 import Carousel from "./Carousel";
 const axios = require("axios");
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
 import doggieBday from "./Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg";
 import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
@@ -50,11 +51,16 @@ const App = (props) => {
   const render = () => {
     return gifResults.map((gif) => {
       return (
-        <div>
-          <div className="gifContainer">
-            <img src={gif.images.fixed_height.url} />
-          </div>
-        </div>
+        <BrowserRouter>
+          <Routes>
+             <div>
+              <div className="gifContainer">
+                <img src={gif.images.fixed_height.url} />
+              </div>
+            </div>
+          </Routes>
+        </BrowserRouter>
+       
       );
     });
   };
@@ -76,7 +82,7 @@ const App = (props) => {
   };
   return (
     <div>
-      <NavBar />
+      <Layout />
       <h1>Let's Get Some Gifs!</h1>
       <GifContainer
         userInput={userInput}
