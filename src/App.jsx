@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
 import Layout from "../Layout.js";
 import Carousel from "./Carousel";
+import Home from "./Home";
 const axios = require("axios");
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
@@ -51,16 +52,11 @@ const App = (props) => {
   const render = () => {
     return gifResults.map((gif) => {
       return (
-        <BrowserRouter>
-          <Routes>
-             <div>
-              <div className="gifContainer">
-                <img src={gif.images.fixed_height.url} />
-              </div>
-            </div>
-          </Routes>
-        </BrowserRouter>
-       
+        <div>
+          <div className="gifContainer">
+            <img src={gif.images.fixed_height.url} />
+          </div>
+        </div>
       );
     });
   };
@@ -81,18 +77,13 @@ const App = (props) => {
     setUserInput("");
   };
   return (
-    <div>
-      <Layout />
-      <h1>Let's Get Some Gifs!</h1>
-      <GifContainer
-        userInput={userInput}
-        handleInput={handleInput}
-        gifResults={gifResults}
-        notEnoughResults={notEnoughResults}
-        render={render}
-      />
-      <Carousel slides={slides} />
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route index element={<Home />} />
+    </Routes>
+     
+    </BrowserRouter>
   );
 };
 export default App;
