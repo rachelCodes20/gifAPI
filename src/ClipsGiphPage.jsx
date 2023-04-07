@@ -6,6 +6,9 @@ const axios = require("axios");
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
 import doggieBday from "./Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg";
 import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
+import { Outlet, Link } from "react-router-dom";
+
+// add link to go back home!
 
 function handleClick() {}
 
