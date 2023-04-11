@@ -49,6 +49,7 @@ const Home = (props) => {
   }, []);
 
   const render = () => {
+    console.log(`line 52 ${userInput}`)
     return gifResults.map((gif) => {
       return (
         <div>
