@@ -28,7 +28,7 @@ const ClipsGiphPage = (props) => {
   const fetchEffect = (props) => {
     const fetchGifs = async () => {
       const results = await axios(
-        `https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,
+        `https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`,
         {
           params: {
             api_key: process.env.API_KEY,

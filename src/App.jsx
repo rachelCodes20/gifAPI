@@ -10,7 +10,7 @@ const App = (props) => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />} />
-       <Route path="clipsGiphPage" element={<ClipsGiphPage />} />
+       <Route path="/clipsGiphPage" element={<ClipsGiphPage />} />
       <Route index element={<Home />} />
     </Routes>
     </BrowserRouter>
