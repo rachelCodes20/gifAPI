@@ -1,5 +1,5 @@
 import React from 'react';
-import ClipsGiphPage from './src/ClipsGiphPage';
+import clipsGiphPage from './src/ClipsGiphPage.jsx';
 import { Outlet, Link } from "react-router-dom";
 
 function Layout() {
@@ -8,7 +8,7 @@ function Layout() {
       <nav>
         <ul>
             <li>
-              GIPHY Clips Instead? Click <Link to="/">HERE</Link>
+              GIPHY Clips Instead? Click <Link to="/clipsGiphPage">HERE</Link>
             </li>
         </ul>
       </nav>

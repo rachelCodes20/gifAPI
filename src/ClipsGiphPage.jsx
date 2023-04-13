@@ -34,7 +34,8 @@ const ClipsGiphPage = (props) => {
         {
           params: {
             api_key: process.env.API_KEY,
-            limit: 3,
+            limit: 5,
+            rating:'g'
           },
         }
       );
@@ -61,7 +62,7 @@ const ClipsGiphPage = (props) => {
   }, []);
 
   const render = () => {
-    console.log(`line 65 ${userInput}, https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`)
+    console.log(`line 65 ${userInput}, https://api.giphy.com/v1/gifs/trending/search?=${process.env.API_KEY}&q=${userInput}`)
     return gifResults.map((gif) => {
       return (
         <div>
