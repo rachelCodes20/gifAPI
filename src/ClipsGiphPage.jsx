@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
 import Carousel from "./Carousel";
 const axios = require("axios");
+import Home from "./Home.jsx"
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
 import doggieBday from "./Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg";
 import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
@@ -30,7 +31,6 @@ const ClipsGiphPage = (props) => {
       const results = await axios(
         `https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`,
                 // `https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`,
-
         {
           params: {
             api_key: process.env.API_KEY,
@@ -62,7 +62,6 @@ const ClipsGiphPage = (props) => {
   }, []);
 
   const render = () => {
-    console.log(`line 65 ${userInput}, https://api.giphy.com/v1/gifs/trending/search?=${process.env.API_KEY}&q=${userInput}`)
     return gifResults.map((gif) => {
       return (
         <div>
@@ -91,6 +90,7 @@ const ClipsGiphPage = (props) => {
   };
   return (
     <div>
+      <h4 Link to="./Home">Home</h4>
       <h1>Let's Get Some Gifs!</h1>
       <GifContainer
         userInput={userInput}
