@@ -1,5 +1,4 @@
 import React from 'react';
-import clipsGiphPage from './src/ClipsGiphPage.jsx';
 import { Outlet, Link } from "react-router-dom";
 
 function Layout() {
