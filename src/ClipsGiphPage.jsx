@@ -30,7 +30,6 @@ const ClipsGiphPage = (props) => {
     const fetchGifs = async () => {
       const results = await axios(
         `https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`,
-                // `https://api.giphy.com/v1/clips/search?=${process.env.API_KEY}&q=${userInput}`,
         {
           params: {
             api_key: process.env.API_KEY,
@@ -39,15 +38,6 @@ const ClipsGiphPage = (props) => {
           },
         }
       );
-      //     const results = await axios(
-      //   `https://api.giphy.com/v1/gifs/search?=${process.env.API_KEY}&q=${userInput}`,
-      //   {
-      //     params: {
-      //       api_key: process.env.API_KEY,
-      //       limit: 3,
-      //     },
-      //   }
-      // );
       if (results.data.data.length < 3) {
         setGifResults([`Not enough data`]);
         notEnoughResults();
