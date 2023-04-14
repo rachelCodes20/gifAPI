@@ -3,15 +3,11 @@ import React, { useState, useEffect } from "react";
 import GifContainer from "./GifContainer";
 import Carousel from "./Carousel";
 const axios = require("axios");
-import Home from "./Home.jsx"
+import home from "./Home.jsx"
 import happyBalloons from "./Assets/madison-oren-uGP_6CAD-14-unsplash.jpg";
 import doggieBday from "./Assets/delaney-dawson-BXs8SjVelKs-unsplash.jpg";
 import confettiGirl from "./Assets/hugo-ruiz-e2pVrE1PYzs-unsplash.jpg";
 import { Outlet, Link } from "react-router-dom";
-
-// add link to go back home!
-
-function handleClick() {}
 
 const ClipsGiphPage = (props) => {
   const [userInput, setUserInput] = useState("");
@@ -80,7 +76,7 @@ const ClipsGiphPage = (props) => {
   };
   return (
     <div>
-      <h4 Link to="./Home">Home</h4>
+      <h4> <Link to="/home">Home</Link></h4>
       <h1>Let's Get Some Gifs!</h1>
       <GifContainer
         userInput={userInput}
